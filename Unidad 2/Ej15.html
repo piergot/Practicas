@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 15</title>
+    <script type="text/javascript">
+    var diasSemana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes","Sábado", "Domingo"];
+      function mostrarDiasSemanas(){
+        for (var i = 0; i < diasSemana.length; i++) {
+          document.write("<p>" + diasSemana[i] + "</p>");
+        }
+      }
+      function solicitarDia(){
+        var dia = prompt ("Introducir día de la semana en números");
+        if ((isFinite(dia)) && !(isNaN(dia))){
+          alert (diasSemana[dia - 1]);
+        }
+        else{
+          document.write ("Error");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      mostrarDiasSemanas();
+      solicitarDia();
+    </script>
+  </body>
+</html>
