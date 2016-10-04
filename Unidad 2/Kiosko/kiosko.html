@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Kiosko</title>
+    <script type="text/javascript">
+      function generarSurtido(){
+        var surtidos = ["Coca-cola", "Periodico", "Gominolas", "Papas", "Doritos", "Botella de agua", "Chocolate"];
+        return surtidos;
+      }
+      function consultaPrecios(preciosArticulos){
+        var precios = ["€1.00", "€1.70", "€0.70", "€1.20", "€1.35", "€2.00", "€1.20"];
+        return precios[preciosArticulos];
+      }
+      function mostrarSurtido(){
+        var s = generarSurtido();
+        for (var i = 0; i < s.length; i++) {
+          document.write (s[i] + " " + consultaPrecios(i) + "<br>");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h2 align="center">Bienvienido a  Pier's Kiosko</h1>
+    <center><img src="kiosko.jpg" alt="kiosko imagen" onclick="mostrarSurtido();"/></center>
+  </body>
+</html>
