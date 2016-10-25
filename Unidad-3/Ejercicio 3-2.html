@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 2</title>
+    <script type="text/javascript">
+    var letras = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l",
+    "ñ", "z", "x", "c", "v", "b", "n", "m"];
+    var random = letras[Math.floor(Math.random() * letras.length)];
+    document.write("<h1>Manipular Arrays</h1>");
+    document.write('<form name="formulario">');
+    document.write("Introduce algunas palabras que empiecen por: <span>" + random + '</span>');
+    document.write('<textarea name="area" rows="3" cols="40"></textarea>');
+    document.write('<input type="button" name="boton" value="Aceptar" onclick="mostrarPalabras()"></input>' + '</form>');
+
+    function mostrarPalabras(){
+      var ventana = window.open ("", "", "width=200,height=300");
+      ventana.document.write("<meta charset='utf-8'>");
+      var palabras = new Array();
+      palabras = formulario.area.value.split(" ");
+      var aciertos = 0;
+      var fallos = new Array();
+      var x = 0;
+      for (var i = 0; i < palabras.length; i++) {
+        var palabra = palabras[i];
+        if (palabra.charAt(0) == random){
+          aciertos = aciertos + 1;
+        }
+        else {
+          fallos[j] = palabras[i];
+          x++;
+        }
+      }
+      if (fallos.length > 0){
+        ventana.document.write("Has perdido. Tienes unos cuantos errores: " + fallos.join(" "));
+      }
+      else {
+        ventana.document.write("Has ganado. Tienes: " + aciertos + " puntos.");
+      }
+    }
+    </script>
+    <style media="screen">
+    textarea, input{
+      display:block;
+      margin-top:10px;
+      margin-bottom: 10px;
+      padding-left: 2px;
+    }
+    span  {
+      font-weight: bolder;
+    }
+
+    </style>
+  </head>
+  <body>
+  </body>
+</html>

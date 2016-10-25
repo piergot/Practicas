@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cronometro</title>
+    <script type="text/javascript">
+      var crono = new Object();
+      var ventana;
+      crono.empezar = function() {
+        ventana = window.open ("", "", "width=200,height=300");
+        ventana.document.write("<meta charset='utf-8'>");
+        ventana.document.write("<h1>00:00:00</h1>");
+        crono.contar();
+      }
+      crono.inicio = new Date().getTime();
+      var fechainicial = crono.inicio;
+
+      crono.reiniciar = function (){
+        var fecha = new Date().getTime();
+        var fecha2 = new Date().getTime();
+        var parar = new Date(fecha-fecha2);
+        ventana.document.body.innerHTML = "<h1>" + crono.formatear(parar.getUTCHours()) + ":" +
+        crono.formatear(parar.getUTCMinutes()) + ":" + crono.formatear(parar.getUTCSeconds()) + "<h1>";
+        clearTimeout(crono.timer);
+      }
+
+      crono.contar = function(){
+        var fecha = new Date().getTime();
+        var newfecha = new Date(fecha-fechainicial);
+        ventana.document.body.innerHTML = "<h1>" + crono.formatear(newfecha.getUTCHours()) + ":" +
+        crono.formatear(newfecha.getUTCMinutes()) + ":" + crono.formatear(newfecha.getUTCSeconds()) + "<h1>";
+        crono.timer = setTimeout("crono.contar()", 1000);
+      }
+
+      crono.formatear = function (Time){
+        return (Time < 10) ? "0" + Time : + Time;
+      }
+
+    </script>
+  </head>
+  <body>
+    <h1>Cronómetro</h1>
+    <h1></h1>
+    <input type="button" name="boton" value="Contar" onclick="crono.empezar()"></input>
+    <input type="button" name="boton" value="Parar" onclick="crono.reiniciar()"></input>
+  </body>
+</html>
