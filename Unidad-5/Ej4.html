@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 3</title>
+  </head>
+  <body id="co" onmousemove="raton(event)">
+    <script type="text/javascript">
+      function raton(r) {
+        x = r.clientX;
+        y = r.clientY;
+        document.getElementById('co').innerHTML = "Coordenada x: " + x + "<br>Coordenada y: " + y;
+      }
+    </script>
+  </body>
+</html>

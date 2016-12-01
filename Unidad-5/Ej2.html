@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 2</title>
+
+  </head>
+  <body>
+    <h1 onmousewheel="h1(this)">Hola!</h1>
+    <h2>¿Qué tal?</h2>
+    <h3>¿Estás bien?</h3>
+    <p>Hola otra vez</p>
+    <div>
+      Hasta luego
+    </div>
+    <script type="text/javascript">
+      function h1(editarh1){
+        editarh1 = document.getElementsByTagName("h1")[0];
+        editarh1.style.color = "red";
+      }
+      document.getElementsByTagName("h2")[0].onclick =
+        function() {
+          document.body.children[1].textContent = "Hola otra vez!";
+        }
+      onmouseover = function h2(e) {
+        document.body.children[2].textContent = "Hola, he cambiado!";
+      }
+
+    </script>
+  </body>
+</html>
