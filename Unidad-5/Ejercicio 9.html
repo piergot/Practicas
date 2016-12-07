@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 9</title>
+    <style media="screen">
+    body{
+      overflow-y: hidden;
+	    overflow-x: scroll;
+     }
+    </style>
+    <script type="text/javascript">
+      var y = 0;
+      var x = 0;
+      onkeyup = function(e) {
+        if(e.keyCode == "37"){
+            x = x + (-20);
+            document.getElementsByTagName("div")[0].style.left = x + "px";
+        }
+        else if (e.keyCode == "38"){
+            y = y + (-20);
+            document.getElementsByTagName("div")[0].style.top = y + "px";
+        }
+        else if (e.keyCode == "39"){
+            x = x + (20);
+            document.getElementsByTagName("div")[0].style.left = x + "px";
+        }
+        else if (e.keyCode == "40"){
+            y = y + (20);
+            document.getElementsByTagName("div")[0].style.top = y + "px";
+        }
+      }
+    </script>
+    </script>
+  </head>
+  <body>
+    <div>
+    </div>
+    <script type="text/javascript">
+      var cuadrado = document.getElementsByTagName("div")[0];
+      cuadrado.style.backgroundColor = "yellow";
+      cuadrado.style.width = "300px";
+      cuadrado.style.height = "300px";
+      cuadrado.style.border = "2px solid black";
+      cuadrado.style.margin = "200px auto";
+      cuadrado.style.position = "relative";
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 7</title>
+    <script type="text/javascript">
+      onkeydown = function teclaPresionada(e){
+        if (e.altKey || e.ctrlKey	|| e.shiftKey){
+          document.getElementsByTagName("div")[0].textContent = "Tecla especial presionada";
+        }
+        else{
+          var tecla = String.fromCharCode(e.keyCode);
+          document.getElementsByTagName("div")[0].innerHTML = tecla;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="">
+
+    </div>
+  </body>
+</html>
